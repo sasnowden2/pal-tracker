@@ -13,15 +13,15 @@ public class TimeEntry {
     private final int hours;
 
     public TimeEntry(long projectId, long userId, LocalDate localDate, int hours) {
-        this(0L,projectId, userId, localDate, hours);
-    }
-
-    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate localDate, int hours) {
-        this.id = timeEntryId;
         this.projectId = projectId;
         this.userId = userId;
         this.date = localDate;
         this.hours = hours;
+    }
+
+    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate localDate, int hours) {
+        this(projectId, userId, localDate, hours);
+        this.id = timeEntryId;
     }
 
     public TimeEntry() {
